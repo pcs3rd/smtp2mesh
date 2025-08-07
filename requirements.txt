@@ -8,10 +8,6 @@ idna==3.10
 meshtastic==2.7.0
 packaging==24.2
 protobuf==6.31.1
-pyobjc-core==10.3.2
-pyobjc-framework-Cocoa==10.3.2
-pyobjc-framework-CoreBluetooth==10.3.2
-pyobjc-framework-libdispatch==10.3.2
 Pypubsub==4.0.3
 pyserial==3.5
 PyYAML==6.0.2
