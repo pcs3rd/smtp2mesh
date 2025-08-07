@@ -1,0 +1,16 @@
+services:
+  smtp2mesh:
+    stdin_open: true
+    tty: true
+    #ports:
+    #  - 8420:8420
+    volumes:
+      - /data/smtp2mesh/config.ini:/app/config.ini:rw
+    image: ghcr.io/pcs3rd/smtp2mesh:latest
+
+  meshtasticd-smtp: # Runs a virtual node. Used to send out traffic
+    ports:
+      - 4403:4403
+    restart: unless-stopped
+    container_name: meshtasticd
+    image: meshtastic/meshtasticd:beta
