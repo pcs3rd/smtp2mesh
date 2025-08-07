@@ -17,6 +17,6 @@ COPY config.ini /app/config.ini
 
 RUN pip install -r requirements.txt
 
-RUN chmod +x /app/script/docker/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
-ENTRYPOINT ["/bin/bash", "/app/script/docker/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/app/entrypoint.sh"]
