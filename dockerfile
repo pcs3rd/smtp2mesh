@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM python:latest
 ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update && apt-get install -y gettext tzdata locales nano && rm -rf /var/lib/apt/lists/*
@@ -9,6 +9,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     update-locale LANG=en_US.UTF-8
 ENV LANG="en_US.UTF-8"
 ENV TZ="America/Los_Angeles"
+ENV PYTHONWARNINGS="ignore"
 
 WORKDIR /app
 COPY . /app
